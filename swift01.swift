@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 15:48:49 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/14 16:06:16 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/14 16:15:04 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,28 @@ class spaceShip
 			exit (0)
 		}
 	}
-	func printInfos()
-	{
-		print("Name: \(name)\nHealth: \(health)\nPos: \(position)")
-	}
 }
 
 class Fighter: spaceShip
 {
 	var weapon = ""
 	var	remainingFirePower = 0
+	func fire()
+	{
+		if (remainingFirePower > 0)
+		{
+			print("fire 🔫")
+			remainingFirePower -= 1
+		}
+		else
+		{
+			print("⚠️ you have no more fire power.")
+		}
+	}
+	func printInfos()
+	{
+		print("Name: \(name)\nHealth: \(health)\nPos: \(position)\nremainingFirePower: \(remainingFirePower)")
+	}
 }
 
 var destroyer = Fighter()
@@ -61,7 +73,15 @@ destroyer.printInfos();
 destroyer.moveLeft()
 destroyer.moveLeft()
 destroyer.wasHit()
+destroyer.fire()
 destroyer.moveRight()
+destroyer.fire()
+destroyer.fire()
+destroyer.fire()
+destroyer.fire()
+destroyer.fire()
+destroyer.fire()
+destroyer.fire()
 destroyer.printInfos()
 //|var Falcon = spaceShip()| this doesn't work bec the super class spaceShip can't inherits from
 //|Falcon.weapon   = "Hell"| Fighter (The subclass), this is because a subclass is considered 
