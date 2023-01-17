@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 15:48:49 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/14 16:15:04 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/14 18:22:25 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@ import Cocoa
 
 class spaceShip
 {
-	var name: String = ""
+	var name = ""
 	var health = 0
 	var position = 0
 	func moveLeft()
